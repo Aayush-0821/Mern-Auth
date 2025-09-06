@@ -1,0 +1,21 @@
+import React, { useContext } from 'react'
+import { assets } from '../assets/assets'
+import { AppContext } from '../context/AppContext'
+
+function Header() {
+
+    const {userData} = useContext(AppContext);
+
+    return (
+        <div className='flex flex-col items-center mt-20 px-4 text-center text-gray-800'>
+            <img src={assets.Robot} alt="Robot" className='w-46 h-46 rounded-full m-6' />
+            <p className='flex items-center gap-2 text-xl sm:text-3xl font-medium mb-2'>Hey {userData?userData.name : 'Developer'} !
+                <img src={assets.HandWave} alt="Hand-Wave" className='w-15 aspect-square' /></p>
+            <p className='text-3xl sm:text-5xl font-semibold mb-4'>Welcome to Our App</p>
+            <p className='mb-8 max-w-md'>Let's start with a quick product tour and we will have you up and running in no time!</p>
+            <button className='border border-gray-500 rounded-full px-8 py-2.5 hover:bg-gray-100 transition-all duration-300 cursor-pointer'>Get Started</button>
+        </div>
+    )
+}
+
+export default Header
